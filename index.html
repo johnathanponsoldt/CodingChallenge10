@@ -1,31 +1,24 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>Event Delegation</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Page</title>
 </head>
 <body>
-    <ul id="productList">
-        <h2 id="product-name">Charger</h2>
-        <p id="product-price">Price: $25</p>
-    </ul>
-    <button id="addProductButton">Add Smartphone</button>
-
-    <script>
-        let productList = document.getElementById('productList');
-        let addProductButton = document.getElementById('addProductButton');
-
-        productList.addEventListener('click', (event) => {
-            if (event.target.tagName === 'LI') {
-                console.log('Product clicked:', event.target.dataset.product);
-            }
-        });
-
-        addProductButton.addEventListener('click', () => {
-            let newProduct = document.createElement('li');
-            newProduct.textContent = 'Smartphone';
-            newProduct.dataset.product = 'Smartphone';
-            productList.appendChild(newProduct);
-        });
-    </script>
+    <h2 id="product-name">Button Down Shirt</h2>
+    <p id="product-price">Price: $45</p>
+    
+    <label for="size-options">Select Size:</label>
+    <select id="size-options">
+        <option value="small" data-price="45" data-stock="true">Small: In Stock</option>
+        <option value="medium" data-price="55" data-stock="true">Medium: In Stock</option>
+        <option value="large" data-price="65" data-stock="false">Large: Out of Stock</option>
+    </select>
+    
+    <button id="purchase-btn">Purchase</button>
+    <div id="product-list"></div>
+    
+    <script src="main.js"></script>
 </body>
 </html>
