@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Event Delegation</title>
+</head>
+<body>
+    <ul id="productList">
+        <h2 id="product-name">Charger</h2>
+        <p id="product-price">Price: $25</p>
+    </ul>
+    <button id="addProductButton">Add Smartphone</button>
+
+    <script>
+        let productList = document.getElementById('productList');
+        let addProductButton = document.getElementById('addProductButton');
+
+        productList.addEventListener('click', (event) => {
+            if (event.target.tagName === 'LI') {
+                console.log('Product clicked:', event.target.dataset.product);
+            }
+        });
+
+        addProductButton.addEventListener('click', () => {
+            let newProduct = document.createElement('li');
+            newProduct.textContent = 'Smartphone';
+            newProduct.dataset.product = 'Smartphone';
+            productList.appendChild(newProduct);
+        });
+    </script>
+</body>
+</html>
