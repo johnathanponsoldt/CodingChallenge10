@@ -25,3 +25,16 @@ sizeDropdown.addEventListener('change', function () {
  }
     
 });
+
+// Task 4: Create a Checkout Event
+
+purchaseButton.addEventListener('Click', function () {
+    const selectedOption = sizeDropdown.options[sizeDropdown.selectedIndex];
+    const isInstock = selectedOption.getAttribute('data-stock') === 'true';
+
+    if (isInstock) {
+        alert('The purchase is confirmed, thank you for buying');
+      } else {
+        alert('Sorry the size you tried ordering is not in stock');
+      }
+});
