@@ -38,3 +38,6 @@ purchaseButton.addEventListener('Click', function () {
         alert('Sorry the size you tried ordering is not in stock');
       }
 });
+
+// Task 5: Implement Event Delegation for Dynamic Product List
+
